@@ -1,0 +1,15 @@
+{
+    "app": {
+        "currentVersion": "1.0"
+    },
+    "manifest": {
+        "githubRepositoryUrl": "https://github.com/poyrazhancilar/TestingLauncher",
+        "githubBranch": "main"
+    },
+    "torch": {
+        "appCommunication": {
+            "provider": "redis",
+            "active": false
+        }
+    }
+}
