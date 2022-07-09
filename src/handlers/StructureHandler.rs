@@ -4,9 +4,10 @@ pub fn init() -> bool {
     let mut status = false;
 
     if std::path::Path::new(config_path().as_str()).exists() {
-        
+        status = true;
     } else {
-        // Config file not found
+        println!("Config file not found.");
+        status = false;
     }
 
     status
@@ -20,7 +21,12 @@ pub fn app_path() -> String {
         Ok(exe_path) => PATH = exe_path.display().to_string().replace("\\torch.exe", "").replace("\\?\\", ""),
         Err(e) => println!("failed to get current exe path: {}", e),
     };
-    PATH.remove(0);
+
+    let ch = String::from(PATH.chars().next().unwrap());
+    if ch.eq("\\") || ch.eq("/") {
+        PATH.remove(0);
+    } 
+
     PATH
 }
 

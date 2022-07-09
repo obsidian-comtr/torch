@@ -10,3 +10,13 @@ pub fn cfg() -> Value {
     let json: serde_json::Value = serde_json::from_str(&data).expect("deserialize error");
     return json;
 }
+
+pub fn check() {
+
+    if cfg()["torch"]["services"]["updater"] == true {
+        println!("Updater is active");
+    } else {
+        println!("Updater is deactive and disabled");
+    }
+
+}

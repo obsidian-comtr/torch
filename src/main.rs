@@ -5,5 +5,7 @@ mod config_handler;
 mod structure_handler;
 
 fn main() {
-    
+    if structure_handler::init() {
+        config_handler::check();
+    }
 }
