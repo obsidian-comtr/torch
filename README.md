@@ -1,2 +1,2 @@
 # torch
-Open source application update tool for your work. (WIP)
+Open source application enchantment tool for your work. (WIP)
